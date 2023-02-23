@@ -1,0 +1,16 @@
+@import url(../assets/css/bootstrap.min.css);
+.my-container {
+  width: 1000px;
+  margin: auto;
+  margin-top: 50px; }
+
+.my-main {
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px; }
+
+.my-card {
+  max-height: 15rem; }
+
+/*# sourceMappingURL=styles.css.map */
