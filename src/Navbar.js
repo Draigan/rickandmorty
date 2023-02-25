@@ -1,8 +1,9 @@
-function Navbar() {
+import logo from "./assets/images/logo.png";
+function Navbar({ changeDataType }) {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-lg">
-        <a className="navbar-brand" href="#">Rick and Morty Characters</a>
+        <a className="navbar-brand" href="#"><img className="my-logo" src={logo} /></a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
@@ -13,7 +14,7 @@ function Navbar() {
               <a className="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Link</a>
+              <a className="nav-link" onClick={changeDataType} href="#">changeText</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">Link</a>

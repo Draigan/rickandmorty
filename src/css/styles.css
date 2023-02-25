@@ -2,15 +2,18 @@
 .my-container {
   width: 1000px;
   margin: auto;
-  margin-top: 50px; }
+  text-align: center;
+  margin-top: 20px; }
 
 .my-main {
-  margin-top: 8px;
+  margin-top: 8px; }
+
+.my-content {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 10px; }
 
-.my-card {
-  max-height: 15rem; }
+.my-logo {
+  width: 10rem; }
 
 /*# sourceMappingURL=styles.css.map */
