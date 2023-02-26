@@ -5,12 +5,10 @@ import Main from './Main';
 import LoadCards from './LoadCards';
 
 function App() {
-  const [text, setText] = useState("Cool");
   const [data, setData] = useState(null);
-  // const [url, setURL] = useState("https://rickandmortyapi.com/api/character");
-  // const [page, setPage] = useState(null);
-  // const [allPages, setAllPages] = useState(null);
-  const { currentPages, setAllPages, allPages, url, setCurrentPages, setURL, changePage } = usePageChange();
+  const { currentPages, dataType, setDataType, setAllPages, allPages, url, setCurrentPages, setURL, changePage } = usePageChange();
+
+
 
   useEffect(() => {
     fetch(url)
@@ -31,15 +29,30 @@ function App() {
       });
   }, [url]);
 
-  function changeDataType() {
-    setURL("https://rickandmortyapi.com/api/location/")
+
+  function changeDataType(e) {
+    if (e.target.innerHTML == "Locations") {
+      setURL("https://rickandmortyapi.com/api/location");
+      setCurrentPages(null);
+      setDataType("location")
+    }
+    if (e.target.innerHTML == "Characters") {
+      setURL("https://rickandmortyapi.com/api/character");
+      setCurrentPages(null);
+      setDataType("character");
+    }
 
   }
 
   return (
     <>
-      <Navbar />
-      <Main text={text} changeDataType={changeDataType} changePage={changePage} page={currentPages} LoadCards={LoadCards} data={data} />
+      <Navbar changeDataType={changeDataType}
+      />
+      <Main
+        changePage={changePage}
+        page={currentPages}
+        LoadCards={LoadCards}
+        data={data} />
     </>
   );
 }
